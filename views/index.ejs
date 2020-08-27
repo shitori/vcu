@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+</head>
+<body>
+<h1><%= title %></h1>
+<p>Welcome to <%= title %></p>
+
+<% for (var j = 0; j < messages.length; j++) {
+if (messages[j].attachments.length > 0){ %>
+
+    <p> <%= messages[j].author.name %></p>
+    <img src="<%= messages[j].author.avatarUrl %>" alt="">
+    <% for (var i = 0; i < messages[j].attachments.length; i++) { %>
+        <p> <%= messages[j].attachments[i].fileName %></p>
+        <img src="<%= messages[j].attachments[i].url %>" alt="">
+    <% } %>
+<% } %>
+
+<% } %>
+
+</body>
+</html>
